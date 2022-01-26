@@ -13,6 +13,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04. Array Rotation", "04. A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05. Top Integers", "05. Top Integers\05. Top Integers.csproj", "{B7F40CE6-75B2-47BC-AE48-61980A494F20}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06. Equal Sum", "06. Equal Sum\06. Equal Sum.csproj", "{46025535-ED0F-40DD-BA8A-764457BE9B82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07. Max Sequence of Equal Elements", "07. Max Sequence of Equal Elements\07. Max Sequence of Equal Elements.csproj", "{0016266C-F2F9-4B73-92FB-B08F8F849AE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08. Magic Sum", "08. Magic Sum\08. Magic Sum.csproj", "{EC8115CD-E2E8-4225-B7D1-DB6054508B59}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +45,18 @@ Global
 		{B7F40CE6-75B2-47BC-AE48-61980A494F20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7F40CE6-75B2-47BC-AE48-61980A494F20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7F40CE6-75B2-47BC-AE48-61980A494F20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46025535-ED0F-40DD-BA8A-764457BE9B82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46025535-ED0F-40DD-BA8A-764457BE9B82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46025535-ED0F-40DD-BA8A-764457BE9B82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46025535-ED0F-40DD-BA8A-764457BE9B82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0016266C-F2F9-4B73-92FB-B08F8F849AE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0016266C-F2F9-4B73-92FB-B08F8F849AE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0016266C-F2F9-4B73-92FB-B08F8F849AE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0016266C-F2F9-4B73-92FB-B08F8F849AE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC8115CD-E2E8-4225-B7D1-DB6054508B59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC8115CD-E2E8-4225-B7D1-DB6054508B59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC8115CD-E2E8-4225-B7D1-DB6054508B59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC8115CD-E2E8-4225-B7D1-DB6054508B59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
