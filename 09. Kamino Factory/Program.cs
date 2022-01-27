@@ -12,14 +12,14 @@ namespace _09._Kamino_Factory
             int moreOnes = 0;
             int biggestOneCount = 0;
             int currentSequence = 0;
+            int [] bestsequence = new int[dna];
             string input = Console.ReadLine();
-            int[] sequence = input.Split("!").Select(int.Parse).ToArray();
-            int[] bestsequence = sequence;
             while (input != "Clone them!")
             {
                 int oneCount = 0;
                 int onesCount = 0;
                 int position = 0;
+                int[] sequence = input.Split("!").Select(int.Parse).ToArray();
                 for (int i = 0; i < sequence.Length; i++)
                 {
                     if (sequence[i] == 1)
@@ -43,7 +43,7 @@ namespace _09._Kamino_Factory
                     biggestOneCount = oneCount;
                     currentSequence++;
                 }
-                else if (onesCount > moreOnes && position < bestPosition)
+                else if (onesCount == moreOnes && position < bestPosition)
                 {
                     moreOnes = onesCount;
                     bestPosition = position;
@@ -51,7 +51,7 @@ namespace _09._Kamino_Factory
                     biggestOneCount = oneCount;
                     currentSequence++;
                 }
-                else if (onesCount > moreOnes && position < bestPosition && biggestOneCount < oneCount)
+                else if (onesCount == moreOnes && position == bestPosition && biggestOneCount < oneCount)
                     {
                     moreOnes = onesCount;
                     bestPosition = position;
