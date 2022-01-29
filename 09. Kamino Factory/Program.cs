@@ -17,75 +17,56 @@ namespace _09._Kamino_Factory
             string input = Console.ReadLine();
             while (input != "Clone them!")
             {
-                string newSequence = "";
                 int sumOnes = 0;
-                int couple = 0;
-                int couples = 0;
+                int oneCount = 0;
+                int onesCount = 0;
+                int position = int.MaxValue;
                 int[] sequence = input.Split("!").Select(int.Parse).ToArray();
                 foreach (int ones in sequence)
                 {
-                    sumOnes += ones;
-                }
-                for (int i = 0; i < sequence.Length; i++)
-                {
-                    newSequence += sequence[i].ToString();
-                }
-                for (int i = 0; i < input.Length; i++)
-                {
-                        couple = newSequence.IndexOf("11");
-                    bestPosition = couple;
-                    if (couple>0)
+                    if (ones == 1)
                     {
-                        i = couple + 1;
+                        oneCount += ones;
                     }
                 }
-
-                //int oneCount = 0;
-                //int onesCount = 0;
-                //int position = int.MaxValue;
-                //for (int i = 0; i < sequence.Length; i++)
-                //{
-                //    if (sequence[i] == 1)
-                //    {
-                //        oneCount++;
-                //    }
-                //}
-                //    for (int i = 0; i < sequence.Length-1; i++)
-                //{
-                //    if (sequence[i] == 1 && sequence[i+1] == 1)
-                //    {
-                //        onesCount++;
-                //        if (position==int.MaxValue)
-                //        {
-                //        position = i;
-                //        }
-                //        i++;
-                //    }
-                //}
-                //if (onesCount > moreOnes)
-                //{
-                //    moreOnes = onesCount;
-                //    bestPosition = position;
-                //    bestsequence = sequence;
-                //    biggestOneCount = oneCount;
-                //    bestNumSequence = currentSequence;
-                //}
-                //else if (onesCount == moreOnes && position < bestPosition)
-                //{
-                //    moreOnes = onesCount;
-                //    bestPosition = position;
-                //    bestsequence = sequence;
-                //    biggestOneCount = oneCount;
-                //    bestNumSequence = currentSequence;
-                //}
-                //else if (onesCount == moreOnes && position == bestPosition && biggestOneCount < oneCount)
-                //    {
-                //    moreOnes = onesCount;
-                //    bestPosition = position;
-                //    bestsequence = sequence;
-                //    biggestOneCount = oneCount;
-                //    bestNumSequence = currentSequence;
-                //}
+                int tempSumOnes = 0;
+                for (int i = 0; i < sequence.Length - 1; i++)
+                {
+                    if (sequence[i] == 1)
+                    {
+                        tempSumOnes++;
+                    }
+                    else
+                    {
+                        tempSumOnes = 0;
+                    }
+                    if (tempSumOnes > sumOnes)
+                    {
+                        sumOnes = tempSumOnes;
+                            position = i;
+                    }
+                }
+                if (sumOnes > moreOnes)
+                {
+                    moreOnes = sumOnes;
+                    bestPosition = position;
+                    bestsequence = sequence;
+                    biggestOneCount = oneCount;
+                    bestNumSequence = currentSequence;
+                }
+                else if (sumOnes == moreOnes && position < bestPosition)
+                {
+                    bestPosition = position;
+                    bestsequence = sequence;
+                    biggestOneCount = oneCount;
+                    bestNumSequence = currentSequence;
+                }
+                else if (sumOnes == moreOnes && position == bestPosition && moreOnes < oneCount)
+                {
+                    bestsequence = sequence;
+                    biggestOneCount = oneCount;
+                    bestNumSequence = currentSequence;
+                }
 
 
                 input = Console.ReadLine();
