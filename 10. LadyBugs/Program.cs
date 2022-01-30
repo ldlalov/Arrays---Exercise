@@ -9,48 +9,50 @@ namespace _10._LadyBugs
         {
             int[] fieldSize = new int[int.Parse(Console.ReadLine())];
             int[] ladyBugs = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
-            if (ladyBugs.Length<=fieldSize.Length)
-            {
-                foreach (var ladyBug in ladyBugs)
+                foreach (int ladyBug in ladyBugs)
                 {
                     if (ladyBug>=0 && ladyBug<fieldSize.Length)
                     {
                         fieldSize[ladyBug] = 1;
                     }
                 }
-            }
-            string input = Console.ReadLine();
-            while (input != "end")
+
+            string input;
+            while ((input = Console.ReadLine()) != "end")
             {
-                string[] position = input.Split();
-                if (int.Parse(position[0]) >= 0 && int.Parse(position[0]) < fieldSize.Length)
+                string[] position = input.Split(' ', StringSplitOptions.RemoveEmptyEntries).ToArray();
+                int oldPosition = int.Parse(position[0]);
+                int flyLength = int.Parse(position[2]);
+                
+                if (oldPosition >= 0 && oldPosition < fieldSize.Length)
                 {
-                    if (fieldSize[int.Parse(position[0])] == 1)
+                    if (fieldSize[oldPosition] == 1)
                     {
-                        fieldSize[int.Parse(position[0])] = 0;
+                        fieldSize[oldPosition] = 0;
                         if (position[1] == "right")
                         {
-                            int newPosition = int.Parse(position[0]) + int.Parse(position[2]);
-                            while (newPosition < fieldSize.Length)
+                            int newPosition = oldPosition + flyLength;
+                            while (newPosition >= 0 && newPosition < fieldSize.Length)
                             {
                                 if (fieldSize[newPosition] == 1)
                                 {
-                                    newPosition++;
+                                    newPosition+= flyLength;
                                 }
                                 else
                                 {
                                     fieldSize[newPosition] = 1;
+                                    break;
                                 }
                             }
                         }
                         else if (position[1] == "left")
                         {
-                            int newPosition = int.Parse(position[0]) - int.Parse(position[2]);
-                            while (newPosition >= 0)
+                            int newPosition = oldPosition - flyLength;
+                            while (newPosition >= 0 && newPosition < fieldSize.Length)
                             {
                                 if (fieldSize[newPosition] == 1)
                                 {
-                                    newPosition++;
+                                    newPosition-= flyLength;
                                 }
                                 else
                                 {
@@ -62,7 +64,6 @@ namespace _10._LadyBugs
                         }
                     }
                 }
-                input = Console.ReadLine();
             }
             Console.WriteLine($"{string.Join(" ", fieldSize)}");
         }
