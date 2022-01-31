@@ -16,7 +16,6 @@ namespace _10._LadyBugs
                         fieldSize[ladyBug] = 1;
                     }
                 }
-
             string input;
             while ((input = Console.ReadLine()) != "end")
             {
